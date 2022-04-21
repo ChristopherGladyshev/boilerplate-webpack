@@ -1,0 +1,25 @@
+@import "~normalize-scss/sass/normalize/import-now";
+
+$color-white: white;
+
+@font-face {
+  font-family: "georgia-bold-italic";
+  src: local("georgia-bold-italic"),
+      url("../asset/fonts/georgia-bold-italic.ttf") format("ttf"),
+      url("../asset/fonts/georgia-bold-italic.woff") format("woff")
+}
+
+
+.root {
+  background-color: black;
+  color: $color-white;
+  font-family: 'georgia-bold-italic', sans-serif;
+  font-size: 30px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
