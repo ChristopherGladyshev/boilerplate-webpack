@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const ENV = process.env.npm_lifecycle_event;
 const isProd = ENV === 'build';
@@ -64,7 +65,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: './src/img', to: './img/' },
+        { from: './src/asset', to: './' },
+        // { from: './src/img', to: './img/' },
         // {from: './src/audio', to: './'},
         // {from: './src/audio', to: './audio/'},
       ],
@@ -74,6 +76,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new ESLintPlugin(),
   ],
   devServer: {
     static: {
